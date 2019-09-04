@@ -33,7 +33,7 @@ module ActionController
 
     module ConfigMethods
       def cache_store
-        config.cache_store
+        ActiveSupport::Cache.lookup_store(Rails.application.config.cache_store)
       end
 
       def cache_store=(store)
